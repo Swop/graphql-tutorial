@@ -1,0 +1,22 @@
+type Query {
+    video(id: Int!): Video
+    videos: [Video]
+    user(id: Int!): User
+    users: [User]
+}
+
+type Mutation {
+    createVideo(title: String!, ownerId: Int!): Video
+}
+
+type Video {
+    id: Int
+    title: String
+    owner: User
+}
+
+type User {
+    id: Int
+    name: String
+    videos: [Video]
+}
